@@ -54,7 +54,9 @@ class Student
   end
   
   def self.find_by_name(name)
-    
+    sql = <<-SQL
+    SEL
+    SQL
   end
   
 end
