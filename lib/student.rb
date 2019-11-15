@@ -58,7 +58,7 @@ class Student
     SELECT * FROM students WHERE name = ? LIMIT 1
     SQL
     DB[:conn].execute(sql, name).map do |row|
-      self.name_by_name(row)
+      self.find_by_name(row)
     end.first
   end
   
