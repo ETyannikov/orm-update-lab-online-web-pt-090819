@@ -35,7 +35,11 @@ class Student
     VALUES (? , ?)
     SQL
     DB[:conn].execute(sql,self.name,self.grade)
-    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0] if @id == nil
+    if @id == nil
+    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
+    else
+      DB[:conn].execute("UPDATE")
+    end
   end
   
   
