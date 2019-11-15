@@ -59,7 +59,7 @@ class Student
     SQL
     DB[:conn].execute(sql, name).map do |row|
       self.name_by_name(row)
-    end
+    end.first
   end
   
 end
